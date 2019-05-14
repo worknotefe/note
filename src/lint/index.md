@@ -1,7 +1,7 @@
 ## 代码规范
 ### 1. js规范
 #### eslint
-Linter 是检查代码风格/错误的小工具。其他类似的 Linter 工具还有：TSLint、stylelin
+Linter 是检查代码风格/错误的小工具。其他类似的 Linter 工具还有：TSLint、stylelint
 - [文档](https://cn.eslint.org/)
 - airbnb
     - [文档]（https://juejin.im/entry/56e8c0c1816dfa0051376758）
@@ -89,6 +89,14 @@ insert_final_newline = true
 indent_style = space
 indent_size = 2
 ```
+- indent_style：tab为hard-tabs，space为soft-tabs。
+- indent_size：设置整数表示规定每级缩进的列数和soft-tabs的宽度（译注：空格数）。如果设定为tab，则会使用tab_width的值（如果已指定）。
+- tab_width：设置整数用于指定替代tab的列数。默认值就是indent_size的值，一般无需指定。
+- end_of_line：定义换行符，支持lf、cr和crlf。
+- charset：编码格式，支持latin1、utf-8、utf-8-bom、utf-16be和utf-16le，不建议使用uft-8-bom。
+- trim_trailing_whitespace：设为true表示会除去换行行首的任意空白字符，false反之。
+- insert_final_newline：设为true表明使文件以一个空白行结尾，false反之。
+- root：表明是最顶层的配置文件，发现设为true时，才会停止查找.editorconfig文件
 
 
 

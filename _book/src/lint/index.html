@@ -161,7 +161,7 @@
                                 <h2 id="&#x4EE3;&#x7801;&#x89C4;&#x8303;">&#x4EE3;&#x7801;&#x89C4;&#x8303;</h2>
 <h3 id="1-js&#x89C4;&#x8303;">1. js&#x89C4;&#x8303;</h3>
 <h4 id="eslint">eslint</h4>
-<p>Linter &#x662F;&#x68C0;&#x67E5;&#x4EE3;&#x7801;&#x98CE;&#x683C;/&#x9519;&#x8BEF;&#x7684;&#x5C0F;&#x5DE5;&#x5177;&#x3002;&#x5176;&#x4ED6;&#x7C7B;&#x4F3C;&#x7684; Linter &#x5DE5;&#x5177;&#x8FD8;&#x6709;&#xFF1A;TSLint&#x3001;stylelin</p>
+<p>Linter &#x662F;&#x68C0;&#x67E5;&#x4EE3;&#x7801;&#x98CE;&#x683C;/&#x9519;&#x8BEF;&#x7684;&#x5C0F;&#x5DE5;&#x5177;&#x3002;&#x5176;&#x4ED6;&#x7C7B;&#x4F3C;&#x7684; Linter &#x5DE5;&#x5177;&#x8FD8;&#x6709;&#xFF1A;TSLint&#x3001;stylelint</p>
 <ul>
 <li><a href="https://cn.eslint.org/" target="_blank">&#x6587;&#x6863;</a></li>
 <li>airbnb<ul>
@@ -247,7 +247,17 @@ insert_final_newline = true
 [*.{json,yml,md}]
 indent_style = space
 indent_size = 2
-</code></pre>
+</code></pre><ul>
+<li>indent_style&#xFF1A;tab&#x4E3A;hard-tabs&#xFF0C;space&#x4E3A;soft-tabs&#x3002;</li>
+<li>indent_size&#xFF1A;&#x8BBE;&#x7F6E;&#x6574;&#x6570;&#x8868;&#x793A;&#x89C4;&#x5B9A;&#x6BCF;&#x7EA7;&#x7F29;&#x8FDB;&#x7684;&#x5217;&#x6570;&#x548C;soft-tabs&#x7684;&#x5BBD;&#x5EA6;&#xFF08;&#x8BD1;&#x6CE8;&#xFF1A;&#x7A7A;&#x683C;&#x6570;&#xFF09;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x5B9A;&#x4E3A;tab&#xFF0C;&#x5219;&#x4F1A;&#x4F7F;&#x7528;tab_width&#x7684;&#x503C;&#xFF08;&#x5982;&#x679C;&#x5DF2;&#x6307;&#x5B9A;&#xFF09;&#x3002;</li>
+<li>tab_width&#xFF1A;&#x8BBE;&#x7F6E;&#x6574;&#x6570;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x66FF;&#x4EE3;tab&#x7684;&#x5217;&#x6570;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x5C31;&#x662F;indent_size&#x7684;&#x503C;&#xFF0C;&#x4E00;&#x822C;&#x65E0;&#x9700;&#x6307;&#x5B9A;&#x3002;</li>
+<li>end_of_line&#xFF1A;&#x5B9A;&#x4E49;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x652F;&#x6301;lf&#x3001;cr&#x548C;crlf&#x3002;</li>
+<li>charset&#xFF1A;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF0C;&#x652F;&#x6301;latin1&#x3001;utf-8&#x3001;utf-8-bom&#x3001;utf-16be&#x548C;utf-16le&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;uft-8-bom&#x3002;</li>
+<li>trim_trailing_whitespace&#xFF1A;&#x8BBE;&#x4E3A;true&#x8868;&#x793A;&#x4F1A;&#x9664;&#x53BB;&#x6362;&#x884C;&#x884C;&#x9996;&#x7684;&#x4EFB;&#x610F;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF0C;false&#x53CD;&#x4E4B;&#x3002;</li>
+<li>insert_final_newline&#xFF1A;&#x8BBE;&#x4E3A;true&#x8868;&#x660E;&#x4F7F;&#x6587;&#x4EF6;&#x4EE5;&#x4E00;&#x4E2A;&#x7A7A;&#x767D;&#x884C;&#x7ED3;&#x5C3E;&#xFF0C;false&#x53CD;&#x4E4B;&#x3002;</li>
+<li>root&#xFF1A;&#x8868;&#x660E;&#x662F;&#x6700;&#x9876;&#x5C42;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x53D1;&#x73B0;&#x8BBE;&#x4E3A;true&#x65F6;&#xFF0C;&#x624D;&#x4F1A;&#x505C;&#x6B62;&#x67E5;&#x627E;.editorconfig&#x6587;&#x4EF6;</li>
+</ul>
+
                                 
                                 </section>
                             
@@ -286,7 +296,7 @@ indent_size = 2
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"代码规范","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/lint/index.md","mtime":"2019-05-14T13:10:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-14T08:19:54.620Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"代码规范","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/lint/index.md","mtime":"2019-05-14T13:12:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-14T08:19:54.620Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
