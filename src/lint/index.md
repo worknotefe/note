@@ -18,7 +18,8 @@ Linter 是检查代码风格/错误的小工具。其他类似的 Linter 工具�
     - 比 ESLint 支持更多的语言
 
 #### standard
-- enforce code style：无需配置
+- enforce code style：无需配置，无法修改
+- [文档](https://standardjs.com/readme-zhcn.html)
 
 ### 2. style规范
 
