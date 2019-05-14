@@ -1,5 +1,5 @@
 # Summary
 
 * [Introduction](README.md)
-* [规范](lint/index.md)
+* [代码规范](src/lint/index.md)
 
