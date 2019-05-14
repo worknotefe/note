@@ -161,15 +161,34 @@
                                 <h2 id="&#x4EE3;&#x7801;&#x89C4;&#x8303;">&#x4EE3;&#x7801;&#x89C4;&#x8303;</h2>
 <h3 id="1-js&#x89C4;&#x8303;">1. js&#x89C4;&#x8303;</h3>
 <h4 id="eslint">eslint</h4>
+<p>Linter &#x662F;&#x68C0;&#x67E5;&#x4EE3;&#x7801;&#x98CE;&#x683C;/&#x9519;&#x8BEF;&#x7684;&#x5C0F;&#x5DE5;&#x5177;&#x3002;&#x5176;&#x4ED6;&#x7C7B;&#x4F3C;&#x7684; Linter &#x5DE5;&#x5177;&#x8FD8;&#x6709;&#xFF1A;TSLint&#x3001;stylelin</p>
 <ul>
 <li><a href="https://cn.eslint.org/" target="_blank">&#x6587;&#x6863;</a></li>
 <li>airbnb<ul>
 <li>[&#x6587;&#x6863;]&#xFF08;<a href="https://juejin.im/entry/56e8c0c1816dfa0051376758&#xFF09;" target="_blank">https://juejin.im/entry/56e8c0c1816dfa0051376758&#xFF09;</a></li>
 </ul>
 </li>
+<li>&#x529F;&#x80FD;<ul>
+<li>check syntax</li>
+<li>find problems&#xFF1A;&#x524D;&#x4E24;&#x4E2A;&#x53EF;&#x4EE5;&#x7EDF;&#x79F0;&#x4E3A; Code-quality rules&#xFF0C;&#x4F8B;&#x5982; no-unused-vars &#x89C4;&#x5219;</li>
+<li>enforce code style&#xFF1A;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x79F0;&#x4E3A; Formatting rules &#xFF0C;&#x4F8B;&#x5982; keyword-spacing &#x89C4;&#x5219;</li>
+</ul>
+</li>
 </ul>
 <h4 id="prettier">prettier</h4>
+<ul>
+<li>Prettier &#x53EA;&#x662F;&#x4E00;&#x4E2A;Formatting rules &#xFF0C;&#x8D1F;&#x8D23; enforce code style</li>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x628A; ESLint &#x7684; Formatting rules &#x90E8;&#x5206;&#x7528; Prettier &#x53D6;&#x4EE3;<ul>
+<li>&#x4EE3;&#x7801;&#x89C4;&#x8303;&#x6BD4; ESLint &#x7684; Airbnb&#x3001;Standard &#x66F4;&#x597D;&#x66F4;&#x5148;&#x8FDB;</li>
+<li>&#x6BD4; ESLint &#x63D0;&#x4F9B;&#x66F4;&#x5C11;&#x7684;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x89C4;&#x5219;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x7EC8;&#x6781;&#x76EE;&#x7684;&#x662F;&#x7ED3;&#x675F;&#x5173;&#x4E8E;&#x4EE3;&#x7801;&#x98CE;&#x683C;&#x7684;&#x4E89;&#x8BBA;</li>
+<li>&#x6BD4; ESLint &#x652F;&#x6301;&#x66F4;&#x591A;&#x7684;&#x8BED;&#x8A00;</li>
+</ul>
+</li>
+</ul>
 <h4 id="standard">standard</h4>
+<ul>
+<li>enforce code style&#xFF1A;&#x65E0;&#x9700;&#x914D;&#x7F6E;</li>
+</ul>
 <h3 id="2-style&#x89C4;&#x8303;">2. style&#x89C4;&#x8303;</h3>
 <h3 id="3-&#x9879;&#x76EE;&#x5B9E;&#x73B0;">3. &#x9879;&#x76EE;&#x5B9E;&#x73B0;</h3>
 <h4 id="&#x7ED1;&#x5B9A;git-hook">&#x7ED1;&#x5B9A;git hook</h4>
@@ -210,8 +229,23 @@
         loader: &apos;eslint-loader&apos;,
         options: {
             ignorePath: path.join(__dirname, &apos;../.eslintignore-tmp&apos;),
+            fix: true,
         },
     }
+</code></pre><h3 id="4-&#x5176;&#x4ED6;">4. &#x5176;&#x4ED6;</h3>
+<h4 id="editorconfig"><a href="http://www.alloyteam.com/2014/12/editor-config/" target="_blank">.editorconfig</a></h4>
+<pre><code>root = true
+
+[*]
+indent_style = tab
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.{json,yml,md}]
+indent_style = space
+indent_size = 2
 </code></pre>
                                 
                                 </section>
@@ -251,7 +285,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"代码规范","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/lint/index.md","mtime":"2019-05-14T09:56:27.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-14T08:19:54.620Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"代码规范","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/lint/index.md","mtime":"2019-05-14T13:08:58.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-14T08:19:54.620Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
