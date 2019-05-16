@@ -20,6 +20,25 @@ Linter 是检查代码风格/错误的小工具。其他类似的 Linter 工具�
 #### standard
 - enforce code style：无需配置，无法修改
 - [文档](https://standardjs.com/readme-zhcn.html)
+- 可结合snazzy使用，美化错误提示
+```
+    // package.json
+    {
+     "husky": {
+       "hooks": {
+         "pre-commit": "standard \"src/**/*.{js,vue,wpy}\" | snazzy",
+       }
+     }
+    }
+```
+```
+    // standard 规范默认错误提示：
+    D:\pre-commit\src\test.js:2:19: Extra semicolon.
+    ------------------------------------------------
+    // 利用 snazzy 美化后的错误提示：
+    2:19  error  Extra semicolon
+    ✖ 1 problem
+```
 
 ### 2. style规范
 

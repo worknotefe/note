@@ -1,0 +1,505 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>loader · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../lint/">
+            
+                <a href="../lint/">
+            
+                    
+                    代码规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    webpack
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="loader.html">
+            
+                <a href="loader.html">
+            
+                    
+                    loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >loader</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="loader">loader</h2>
+<h3 id="loader&#x914D;&#x7F6E;">loader&#x914D;&#x7F6E;</h3>
+<p>loader&#x7528;&#x4E8E;&#x5BF9;&#x6A21;&#x5757;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x5728;import&#x6216;&#x8005;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#x65F6;&#x9884;&#x5904;&#x7406;&#x6587;&#x4EF6;</p>
+<ul>
+<li>&#x652F;&#x6301;&#x94FE;&#x5F0F;&#x4F20;&#x9012;&#xFF0C;&#x4E00;&#x7EC4;&#x94FE;&#x5F0F;&#x7684; loader &#x5C06;&#x6309;&#x7167;&#x76F8;&#x53CD;&#x7684;&#x987A;&#x5E8F;&#x6267;&#x884C;&#xFF08;&#xFF01;&#xFF09;</li>
+<li>&#x53EF;&#x4EE5;&#x662F;&#x540C;&#x6B65;&#x7684;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5F02;&#x6B65;&#x7684;</li>
+<li>&#x63A5;&#x6536;&#x67E5;&#x8BE2;&#x53C2;&#x6570;&#xFF08;&#xFF1F;&#xFF09;</li>
+</ul>
+<hr>
+<h3 id="webpack-module">webpack module</h3>
+<p>&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x51B3;&#x5B9A;&#x4E86;&#x5982;&#x4F55;&#x5904;&#x7406;&#x9879;&#x76EE;&#x4E2D;&#x7684;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6A21;&#x5757;</p>
+<h4 id="noparse">noParse</h4>
+<p>[RegExp] | function : &#x9632;&#x6B62; webpack &#x89E3;&#x6790;&#x90A3;&#x4E9B;&#x4EFB;&#x4F55;&#x4E0E;&#x7ED9;&#x5B9A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x76F8;&#x5339;&#x914D;&#x7684;&#x6587;&#x4EF6;</p>
+<pre><code>    noParse: /jquery|lodash/
+
+    // &#x4ECE; webpack 3.0.0 &#x5F00;&#x59CB;
+    noParse: function(content) {
+      return /jquery|lodash/.test(content);
+    }
+</code></pre><h4 id="rules-&#x3010;array&#x3011;">rules &#x3010;array&#x3011;</h4>
+<ul>
+<li>&#x6761;&#x4EF6;&#xFF1A;test, include, exclude &#x548C; resource&#xFF0C;&#x5F53;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x6761;&#x4EF6;&#x65F6;&#xFF0C;&#x6240;&#x6709;&#x6761;&#x4EF6;&#x90FD;&#x5339;&#x914D;</li>
+<li><p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<ul>
+<li>loader : &#x662F; <code>Rule.use: [ { loader } ]</code>&#x7684;&#x7B80;&#x5199;</li>
+<li>loaders : Rule.loaders &#x662F; Rule.use &#x7684;&#x522B;&#x540D;</li>
+<li>options : Rule.options &#x548C; Rule.query &#x662F; Rule.use: [ { options } ] &#x7684;&#x7B80;&#x5199;</li>
+<li>query : Rule.options &#x548C; Rule.query &#x662F; Rule.use: [ { options } ] &#x7684;&#x7B80;&#x5199;</li>
+<li>use :<pre><code>  use: [
+    &apos;style-loader&apos;,
+    {
+      loader: &apos;css-loader&apos;,
+      options: {
+        importLoaders: 1
+      }
+    },
+    {
+      loader: &apos;less-loader&apos;,
+      options: {
+        noIeCompat: true
+      }
+    }
+  ]
+</code></pre></li>
+<li>enforce:pre | post&#xFF0C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#xFF0C;&#x666E;&#x901A;loader&#xFF0C;&#x6240;&#x6709; loader &#x901A;&#x8FC7; &#x524D;&#x7F6E;, &#x884C;&#x5185;, &#x666E;&#x901A;, &#x540E;&#x7F6E; &#x6392;&#x5E8F;&#xFF0C;&#x5E76;&#x6309;&#x6B64;&#x987A;&#x5E8F;&#x4F7F;&#x7528;</li>
+<li>parser : &#x89E3;&#x6790;&#x9009;&#x9879;&#x5BF9;&#x8C61;&#xFF0C;false&#xFF0C;&#x5C06;&#x7981;&#x7528;&#x89E3;&#x6790;&#x5668;<pre><code>  //&#x9ED8;&#x8BA4;
+  parser: {
+    amd: false, // &#x7981;&#x7528; AMD
+    commonjs: false, // &#x7981;&#x7528; CommonJS
+    system: false, // &#x7981;&#x7528; SystemJS
+    harmony: false, // &#x7981;&#x7528; ES2015 Harmony import/export
+    requireInclude: false, // &#x7981;&#x7528; require.include
+    requireEnsure: false, // &#x7981;&#x7528; require.ensure
+    requireContext: false, // &#x7981;&#x7528; require.context
+    browserify: false, // &#x7981;&#x7528;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x7684; browserify bundle
+    requireJs: false, // &#x7981;&#x7528; requirejs.*
+    node: false, // &#x7981;&#x7528; __dirname, __filename, module, require.extensions, require.main &#x7B49;&#x3002;
+    node: {...} // &#x5728;&#x6A21;&#x5757;&#x7EA7;&#x522B;(module level)&#x4E0A;&#x91CD;&#x65B0;&#x914D;&#x7F6E; node &#x5C42;(layer)
+  }
+</code></pre></li>
+</ul>
+</li>
+<li><p>&#x5D4C;&#x5957;&#x7684;rule</p>
+</li>
+</ul>
+<hr>
+<h3 id="&#x5982;&#x4F55;&#x7F16;&#x5199;loader">&#x5982;&#x4F55;&#x7F16;&#x5199;loader</h3>
+<p>loader&#x662F;&#x4E00;&#x4E2A;&#x5BFC;&#x51FA;&#x4E3A;&#x51FD;&#x6570;&#x7684; javaScript &#x6A21;&#x5757;&#xFF0C;&#x53EA;&#x505A;&#x5355;&#x4E00;&#x4EFB;&#x52A1;</p>
+<h4 id="&#x7F16;&#x5199;&#x539F;&#x5219;">&#x7F16;&#x5199;&#x539F;&#x5219;</h4>
+<ul>
+<li>&#x7B80;&#x5355;&#x6613;&#x7528;</li>
+<li>&#x94FE;&#x5F0F;&#x4F20;&#x9012;</li>
+<li>&#x6A21;&#x5757;&#x5316;&#x7684;&#x8F93;&#x51FA;</li>
+<li>&#x786E;&#x4FDD;&#x65E0;&#x72B6;&#x6001;</li>
+<li><p>&#x4F7F;&#x7528; loader utilities</p>
+<pre><code>  import { getOptions } from &apos;loader-utils&apos;;
+  import validateOptions from &apos;schema-utils&apos;;
+
+  const schema = {
+    type: &apos;object&apos;,
+    properties: {
+      test: {
+        type: &apos;string&apos;
+      }
+    }
+  }
+
+  export default function(source) {
+    const options = getOptions(this);
+
+    validateOptions(schema, options, &apos;Example Loader&apos;);
+
+    // &#x5BF9;&#x8D44;&#x6E90;&#x5E94;&#x7528;&#x4E00;&#x4E9B;&#x8F6C;&#x6362;&#x2026;&#x2026;
+
+    return `export default ${ JSON.stringify(source) }`;
+  };
+</code></pre></li>
+<li><p>&#x8BB0;&#x5F55; loader &#x7684;&#x4F9D;&#x8D56;:&#x5982;&#x679C;&#x4E00;&#x4E2A; loader &#x4F7F;&#x7528;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#xFF08;&#x4F8B;&#x5982;&#xFF0C;&#x4ECE;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x8BFB;&#x53D6;&#xFF09;&#xFF0C;&#x5FC5;&#x987B;&#x58F0;&#x660E;&#x5B83;&#x3002;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x7528;&#x4E8E;&#x4F7F;&#x7F13;&#x5B58; loaders &#x65E0;&#x6548;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x89C2;&#x5BDF;&#x6A21;&#x5F0F;(watch mode)&#x4E0B;&#x91CD;&#x7F16;&#x8BD1;</p>
+<pre><code>  import path from &apos;path&apos;;
+
+  export default function(source) {
+    var callback = this.async();
+    var headerPath = path.resolve(&apos;header.js&apos;);
+
+    this.addDependency(headerPath);   // addDependency&#xFF1A;&#x58F0;&#x660E;
+
+    fs.readFile(headerPath, &apos;utf-8&apos;, function(err, header) {
+      if(err) return callback(err);
+      callback(null, header + &quot;\n&quot; + source);
+    });
+  };
+</code></pre></li>
+<li>&#x89E3;&#x6790;&#x6A21;&#x5757;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;<ul>
+<li>&#x901A;&#x8FC7;&#x628A;&#x5B83;&#x4EEC;&#x8F6C;&#x5316;&#x6210; require &#x8BED;&#x53E5;</li>
+<li>&#x4F7F;&#x7528; this.resolve &#x51FD;&#x6570;&#x89E3;&#x6790;&#x8DEF;&#x5F84;</li>
+</ul>
+</li>
+<li>&#x63D0;&#x53D6;&#x901A;&#x7528;&#x4EE3;&#x7801;</li>
+<li>&#x907F;&#x514D;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</li>
+<li>&#x4F7F;&#x7528; peer dependencies</li>
+</ul>
+<h4 id="api">API</h4>
+<ul>
+<li>loader&#x51FD;&#x6570;&#x88AB;loader runner&#x8C03;&#x7528;</li>
+<li>&#x53C2;&#x6570;&#xFF1A;&#x4E0A;&#x4E00;&#x4E2A;loader&#x7684;&#x4EA7;&#x7269;&#x6216;&#x8005;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x9009;&#x7684; SourceMap &#x7ED3;&#x679C;&#xFF0C;meta &#x53C2;&#x6570;</li>
+<li>this&#xFF1A;webpack&#x586B;&#x5145;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5F88;&#x591A;&#x65B9;&#x6CD5;</li>
+<li>&#x5904;&#x7406;&#x7ED3;&#x679C;&#xFF1A;<ul>
+<li>String &#x6216;&#x8005; Buffer</li>
+<li>SourceMap&#xFF1A;JSON &#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+</ul>
+<h5 id="&#x5177;&#x4F53;api">&#x5177;&#x4F53;API</h5>
+<ol>
+<li><p>&#x540C;&#x6B65;loader:&#x65E0;&#x8BBA;&#x662F; return &#x8FD8;&#x662F; this.callback &#x90FD;&#x53EF;&#x4EE5;&#x540C;&#x6B65;&#x5730;&#x8FD4;&#x56DE;&#x8F6C;&#x6362;&#x540E;&#x7684; content &#x5185;&#x5BB9;</p>
+<pre><code> module.exports = function(content, map, meta) {
+   return someSyncOperation(content);
+ };
+
+ module.exports = function(content, map, meta) {
+   this.callback(null, someSyncOperation(content), map, meta);
+   return; // &#x5F53;&#x8C03;&#x7528; callback() &#x65F6;&#x603B;&#x662F;&#x8FD4;&#x56DE; undefined
+ };
+</code></pre></li>
+<li><p>&#x5F02;&#x6B65; loader:&#x4F7F;&#x7528; this.async &#x6765;&#x83B7;&#x53D6; callback &#x51FD;&#x6570;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;</p>
+<pre><code> module.exports = function(content, map, meta) {
+   var callback = this.async();
+   someAsyncOperation(content, function(err, result) {
+     if (err) return callback(err);
+     callback(null, result, map, meta);
+   });
+ };
+</code></pre></li>
+<li><p>&quot;Raw&quot; loader&#xFF1A;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x4F1A;&#x88AB;&#x8F6C;&#x5316;&#x4E3A; UTF-8 &#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7136;&#x540E;&#x4F20;&#x7ED9; loader&#x3002;&#x901A;&#x8FC7;&#x8BBE;&#x7F6E; raw&#xFF0C;loader &#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x539F;&#x59CB;&#x7684; Buffer&#x3002;
+&#x6BCF;&#x4E00;&#x4E2A; loader &#x90FD;&#x53EF;&#x4EE5;&#x7528; String &#x6216;&#x8005; Buffer &#x7684;&#x5F62;&#x5F0F;&#x4F20;&#x9012;&#x5B83;&#x7684;&#x5904;&#x7406;&#x7ED3;&#x679C;&#x3002;Complier &#x5C06;&#x4F1A;&#x628A;&#x5B83;&#x4EEC;&#x5728; loader &#x4E4B;&#x95F4;&#x76F8;&#x4E92;&#x8F6C;&#x6362;</p>
+<pre><code> module.exports = function(content) {
+     assert(content instanceof Buffer);
+     return someSyncOperation(content);
+     // &#x8FD4;&#x56DE;&#x503C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A; `Buffer`
+     // &#x5373;&#x4F7F;&#x4E0D;&#x662F; raw loader &#x4E5F;&#x6CA1;&#x95EE;&#x9898;
+ };
+ module.exports.raw = true;
+</code></pre></li>
+<li><p>&#x8D8A;&#x8FC7; loader<strong><font color="#f55d59">(Pitching loader)</font></strong>:
+loader &#x603B;&#x662F;&#x4ECE;&#x53F3;&#x5230;&#x5DE6;&#x5730;&#x88AB;&#x8C03;&#x7528;&#x3002;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;loader &#x53EA;&#x5173;&#x5FC3; request &#x540E;&#x9762;&#x7684;&#x5143;&#x6570;&#x636E;(metadata)&#xFF0C;&#x5E76;&#x4E14;&#x5FFD;&#x7565;&#x524D;&#x4E00;&#x4E2A; loader &#x7684;&#x7ED3;&#x679C;&#x3002;
+&#x5728;&#x5B9E;&#x9645;&#xFF08;&#x4ECE;&#x53F3;&#x5230;&#x5DE6;&#xFF09;&#x6267;&#x884C; loader &#x4E4B;&#x524D;&#xFF0C;&#x4F1A;&#x5148;&#x4ECE;&#x5DE6;&#x5230;&#x53F3;&#x8C03;&#x7528; loader &#x4E0A;&#x7684; pitch &#x65B9;&#x6CD5;&#x3002;&#x5BF9;&#x4E8E;&#x4EE5;&#x4E0B; use &#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code> use: [
+   &apos;a-loader&apos;,
+   &apos;b-loader&apos;,
+   &apos;c-loader&apos;
+ ]
+</code></pre><p>&#x5C06;&#x4F1A;&#x53D1;&#x751F;&#x8FD9;&#x4E9B;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<pre><code> |- a-loader `pitch`
+   |- b-loader `pitch`
+     |- c-loader `pitch`
+       |- requested module is picked up as a dependency
+     |- c-loader normal execution
+   |- b-loader normal execution
+ |- a-loader normal execution
+</code></pre><p>&#x90A3;&#x4E48;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48; loader &#x53EF;&#x4EE5;&#x5229;&#x7528; &quot;&#x8DF3;&#x8DC3;(pitching)&quot; &#x9636;&#x6BB5;&#x5462;&#xFF1F;
+&#x9996;&#x5148;&#xFF0C;&#x4F20;&#x9012;&#x7ED9; pitch &#x65B9;&#x6CD5;&#x7684; data&#xFF0C;&#x5728;&#x6267;&#x884C;&#x9636;&#x6BB5;&#x4E5F;&#x4F1A;&#x66B4;&#x9732;&#x5728; this.data &#x4E4B;&#x4E0B;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x5728;&#x5FAA;&#x73AF;&#x65F6;&#xFF0C;&#x6355;&#x83B7;&#x548C;&#x5171;&#x4EAB;&#x524D;&#x9762;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code> module.exports = function(content) {
+     return someSyncOperation(content, this.data.value);
+ };
+
+ module.exports.pitch = function(remainingRequest, precedingRequest, data) {
+     data.value = 42;
+ };
+</code></pre><p>&#x5176;&#x6B21;&#xFF0C;&#x5982;&#x679C;&#x67D0;&#x4E2A; loader &#x5728; pitch &#x65B9;&#x6CD5;&#x4E2D;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x4F1A;&#x56DE;&#x8FC7;&#x8EAB;&#x6765;&#xFF0C;&#x5E76;&#x8DF3;&#x8FC7;&#x5269;&#x4E0B;&#x7684; loader&#x3002;&#x5728;&#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x5982;&#x679C; b-loader &#x7684; pitch &#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E86;&#x4E00;&#x4E9B;&#x4E1C;&#x897F;&#xFF1A;</p>
+<pre><code> module.exports = function(content) {
+   return someSyncOperation(content);
+ };
+
+ module.exports.pitch = function(remainingRequest, precedingRequest, data) {
+   if (someCondition()) {
+     return &quot;module.exports = require(&quot; + JSON.stringify(&quot;-!&quot; + remainingRequest) + &quot;);&quot;;
+   }
+ };
+</code></pre><p>&#x4E0A;&#x9762;&#x7684;&#x6B65;&#x9AA4;&#x5C06;&#x88AB;&#x7F29;&#x77ED;&#x4E3A;&#xFF1A;</p>
+<pre><code> |- a-loader `pitch`
+   |- b-loader `pitch` returns a module
+ |- a-loader normal execution
+</code></pre></li>
+<li>loader&#x4E0A;&#x4E0B;&#x6587;&#xFF1A;this</li>
+<li>this.version&#xFF1A;&#x7248;&#x672C;&#x53F7;&#xFF0C;&#x5904;&#x7406;&#x517C;&#x5BB9;&#x5F88;&#x6709;&#x7528;</li>
+<li>this.context&#xFF1A;&#x6A21;&#x5757;&#x6240;&#x5728;&#x76EE;&#x5F55;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4F5C;&#x89E3;&#x6790;&#x5176;&#x4ED6;&#x6A21;&#x5757;&#x8DEF;&#x5F84;&#x7684;&#x4E0A;&#x4E0B;&#x6587;</li>
+<li>this.request&#xFF1A;&#x88AB;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684; request &#x5B57;&#x7B26;&#x4E32;</li>
+<li>this.query&#xFF1A;loader&#x914D;&#x7F6E;options&#x6216;&#x8005;query&#x5B57;&#x7B26;&#x4E32;</li>
+<li>this.data&#xFF1A;&#x5728; pitch &#x9636;&#x6BB5;&#x548C;&#x6B63;&#x5E38;&#x9636;&#x6BB5;&#x4E4B;&#x95F4;&#x5171;&#x4EAB;&#x7684; data &#x5BF9;&#x8C61;</li>
+<li>this.callback&#xFF1A;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x540C;&#x6B65;&#x6216;&#x8005;&#x5F02;&#x6B65;&#x8C03;&#x7528;&#x7684;&#x53EF;&#x4EE5;&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x7ED3;&#x679C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x52A1;&#x5FC5;&#x8FD4;&#x56DE;undefined<pre><code>  this.callback(
+    err: Error | null,
+    content: string | Buffer,
+    sourceMap?: SourceMap,    // &#x53EF;&#x9009;&#x7684;&#xFF1A;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x4EE5;&#x88AB;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x89E3;&#x6790;&#x7684; source map
+    meta?: any    // &#x53EF;&#x9009;&#x7684;&#xFF1A;&#x7B2C;&#x56DB;&#x4E2A;&#x9009;&#x9879;&#xFF0C;&#x4F1A;&#x88AB; webpack &#x5FFD;&#x7565;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#xFF08;&#x4F8B;&#x5982;&#x4E00;&#x4E9B;&#x5143;&#x6570;&#x636E;&#xFF09;
+  );
+</code></pre></li>
+<li>this.async&#xFF1A;&#x5F02;&#x6B65;&#x56DE;&#x8C03;&#xFF0C;&#x8FD4;&#x56DE;this.callback</li>
+<li>this.cacheable&#xFF1A;&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x53EF;&#x7F13;&#x5B58;&#x6807;&#x5FD7;&#x7684;&#x51FD;&#x6570;,<code>cacheable(flag = true: boolean)</code>,
+&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;loader &#x7684;&#x5904;&#x7406;&#x7ED3;&#x679C;&#x4F1A;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x53EF;&#x7F13;&#x5B58;&#x3002;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x7136;&#x540E;&#x4F20;&#x5165; false&#xFF0C;&#x53EF;&#x4EE5;&#x5173;&#x95ED; loader &#x7684;&#x7F13;&#x5B58;</li>
+<li>this.loaders&#xFF1A;&#x6240;&#x6709; loader &#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;,<code>loaders = [{request: string, path: string, query: string, module: function}]</code></li>
+<li>this.loaderIndex&#xFF1A;&#x5F53;&#x524D; loader &#x5728; loader &#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x7D22;&#x5F15;</li>
+<li>this.resource&#xFF1A;request &#x4E2D;&#x7684;&#x8D44;&#x6E90;&#x90E8;&#x5206;&#xFF0C;&#x5305;&#x62EC; query &#x53C2;&#x6570;</li>
+<li>this.resourcePath&#xFF1A;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;</li>
+<li>this.resourceQuery&#xFF1A;&#x8D44;&#x6E90;&#x7684; query &#x53C2;&#x6570;</li>
+<li>this.target&#xFF1A;&#x7F16;&#x8BD1;&#x7684;&#x76EE;&#x6807;&#x3002;&#x4ECE;&#x914D;&#x7F6E;&#x9009;&#x9879;&#x4E2D;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;</li>
+<li>this.webpack&#xFF1A;&#x662F;&#x5426;&#x7531;webpack&#x7F16;&#x8BD1;</li>
+<li>this.sourceMap&#xFF1A;&#x5E94;&#x8BE5;&#x751F;&#x6210;&#x4E00;&#x4E2A; source map</li>
+<li>this.emitWarning&#xFF1A;&#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x8B66;&#x544A;</li>
+<li>this.emitError&#xFF1A;&#x53D1;&#x51FA;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;</li>
+<li>this.loadModule</li>
+<li>this.resolve</li>
+<li>this.addDependency&#xFF1A;&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4F5C;&#x4E3A;&#x4EA7;&#x751F; loader &#x7ED3;&#x679C;&#x7684;&#x4F9D;&#x8D56;&#xFF0C;&#x4F7F;&#x5B83;&#x4EEC;&#x7684;&#x4EFB;&#x4F55;&#x53D8;&#x5316;&#x53EF;&#x4EE5;&#x88AB;&#x76D1;&#x542C;&#x5230;<pre><code>  addDependency(file: string)
+  dependency(file: string) // &#x7B80;&#x5199;
+</code></pre></li>
+<li>this.addContextDependency&#xFF1A;&#x628A;&#x6587;&#x4EF6;&#x5939;&#x4F5C;&#x4E3A; loader &#x7ED3;&#x679C;&#x7684;&#x4F9D;&#x8D56;&#x52A0;&#x5165;</li>
+<li>this.clearDependencies&#xFF1A;&#x79FB;&#x9664; loader &#x7ED3;&#x679C;&#x7684;&#x6240;&#x6709;&#x4F9D;&#x8D56;</li>
+<li>this.emitFile&#xFF1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;&#x8FD9;&#x662F; webpack &#x7279;&#x6709;&#x7684;&#x3002;<code>emitFile(name: string, content: Buffer|string, sourceMap: {...})</code></li>
+<li>this.fs&#xFF1A;&#x7528;&#x4E8E;&#x8BBF;&#x95EE; compilation &#x7684; inputFileSystem &#x5C5E;&#x6027;&#x3002;</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"loader","level":"1.3.1","depth":2,"previous":{"title":"webpack","level":"1.3","depth":1,"ref":"","articles":[{"title":"loader","level":"1.3.1","depth":2,"path":"src/webpack/loader.md","ref":"src/webpack/loader.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/webpack/loader.md","mtime":"2019-05-16T09:31:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-15T06:33:37.748Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

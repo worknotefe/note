@@ -113,6 +113,38 @@
             
         </li>
     
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    webpack
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../webpack/loader.html">
+            
+                <a href="../webpack/loader.html">
+            
+                    
+                    loader
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -189,6 +221,21 @@
 <ul>
 <li>enforce code style&#xFF1A;&#x65E0;&#x9700;&#x914D;&#x7F6E;&#xFF0C;&#x65E0;&#x6CD5;&#x4FEE;&#x6539;</li>
 <li><a href="https://standardjs.com/readme-zhcn.html" target="_blank">&#x6587;&#x6863;</a></li>
+<li>&#x53EF;&#x7ED3;&#x5408;snazzy&#x4F7F;&#x7528;&#xFF0C;&#x7F8E;&#x5316;&#x9519;&#x8BEF;&#x63D0;&#x793A;<pre><code>  // package.json
+  {
+   &quot;husky&quot;: {
+     &quot;hooks&quot;: {
+       &quot;pre-commit&quot;: &quot;standard \&quot;src/**/*.{js,vue,wpy}\&quot; | snazzy&quot;,
+     }
+   }
+  }
+</code></pre><pre><code>  // standard &#x89C4;&#x8303;&#x9ED8;&#x8BA4;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#xFF1A;
+  D:\pre-commit\src\test.js:2:19: Extra semicolon.
+  ------------------------------------------------
+  // &#x5229;&#x7528; snazzy &#x7F8E;&#x5316;&#x540E;&#x7684;&#x9519;&#x8BEF;&#x63D0;&#x793A;&#xFF1A;
+  2:19  error  Extra semicolon
+  &#x2716; 1 problem
+</code></pre></li>
 </ul>
 <h3 id="2-style&#x89C4;&#x8303;">2. style&#x89C4;&#x8303;</h3>
 <h3 id="3-&#x9879;&#x76EE;&#x5B9E;&#x73B0;">3. &#x9879;&#x76EE;&#x5B9E;&#x73B0;</h3>
@@ -296,7 +343,7 @@ indent_size = 2
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"代码规范","level":"1.2","depth":1,"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/lint/index.md","mtime":"2019-05-14T13:12:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-14T08:19:54.620Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"代码规范","level":"1.2","depth":1,"next":{"title":"webpack","level":"1.3","depth":1,"ref":"","articles":[{"title":"loader","level":"1.3.1","depth":2,"path":"src/webpack/loader.md","ref":"src/webpack/loader.md","articles":[]}]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"src/lint/index.md","mtime":"2019-05-15T07:18:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-15T06:33:37.748Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
