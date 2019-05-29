@@ -258,9 +258,18 @@ loader 总是从右到左地被调用。有些情况下，loader 只关心 reque
 - this.emitFile：产生一个文件。这是 webpack 特有的。`emitFile(name: string, content: Buffer|string, sourceMap: {...})`
 - this.fs：用于访问 compilation 的 inputFileSystem 属性。
 
+##### 常见loader
+###### less
+- style-loader:creates style nodes from JS strings
+- css-loader:translates CSS into CommonJS
+- less-loader:compiles Less to CSS
 
-
-
+###### url-loader
+- hash
+- digest
+- name
+- limit
+- minetype
 
 
 
