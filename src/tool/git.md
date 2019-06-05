@@ -1,3 +1,6 @@
+#### [常用git命令](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
+
+
 
 #### 使用Git Submodule管理子模块
 子模块允许你将一个 Git 仓库作为另一个 Git 仓库的子目录。 它能让你将另一个仓库克隆到自己的项目中，同时还保持提交的独立
@@ -19,7 +22,7 @@
 3. 回到父模块：`cd ../`
 4. `git add [子模块]`
 5. git commit -m ''
-6. git pull
+6. git push
 
 或者
 1. `git submodule foreach git pull`

@@ -10,12 +10,75 @@ Linter 是检查代码风格/错误的小工具。其他类似的 Linter 工具�
     - find problems：前两个可以统称为 Code-quality rules，例如 no-unused-vars 规则
     - enforce code style：最后一个可以称为 Formatting rules ，例如 keyword-spacing 规则
 
-#### prettier
+#### [prettier](https://segmentfault.com/a/1190000012909159)
 - Prettier 只是一个Formatting rules ，负责 enforce code style
 - 为什么要把 ESLint 的 Formatting rules 部分用 Prettier 取代
     - 代码规范比 ESLint 的 Airbnb、Standard 更好更先进
     - 比 ESLint 提供更少的代码风格规则配置项，终极目的是结束关于代码风格的争论
     - 比 ESLint 支持更多的语言
+
+Prettier is an opinionated code formatter with support for:
+- JavaScript, including ES2017
+- JSX
+- Angular
+- Vue
+- Flow
+- TypeScript
+- CSS, Less, and SCSS
+- HTML
+- JSON
+- GraphQL
+- Markdown, including GFM and MDX
+- YAML
+
+使用，结合各类lint工具
+- eslint
+    - eslint-plugin-prettier
+        ```
+            {
+              "plugins": ["prettier"],
+              "rules": {
+                "prettier/prettier": "error"
+              }
+            }
+        ```
+    - eslint-config-prettier: 关闭冲突的rule
+        ```
+            {
+              "extends": ["prettier"]
+            }
+        ```
+    - 以上两个结合,可简单使用以下，或者直接组合
+        ```
+            {
+                "extends": ["plugin:prettier/recommended"]
+            }
+        ```
+        ```
+            {
+                "extends": ["prettier"],
+                "plugins": ["prettier"],
+                "rules": {
+                    "prettier/prettier": "error"
+                }
+            }
+        ```
+- stylelint
+    - stylelint-config-prettier
+        ```
+            {
+              "extends": ["stylelint-config-prettier"]
+            }
+        ```
+    - stylelint-prettier
+        ```
+            {
+              "plugins": ["stylelint-prettier"],
+              "rules": {
+                "prettier/prettier": true
+              }
+            }
+        ```
 
 #### standard
 - enforce code style：无需配置，无法修改
@@ -41,8 +104,38 @@ Linter 是检查代码风格/错误的小工具。其他类似的 Linter 工具�
 ```
 
 ### 2. style规范
+[stylelint](https://stylelint.io/user-guide/) 是一个基于 Javascript 的代码审查工具，它易于扩展，支持最新的 CSS 语法，也理解类似 CSS 的语法，
+[参考](https://segmentfault.com/a/1190000008708473)
 
-### 3. 项目实现
+顺序、属性是否有效等
+
+- [配置说明](https://juejin.im/post/5b4ffd1ef265da0f990d52e8)
+- extends
+    - stylelint-config-standard
+    - [stylelint-config-rational-order](https://www.npmjs.com/package/stylelint-config-rational-order)
+    - [stylelint-config-prettier](https://www.npmjs.com/package/stylelint-config-prettier)
+- plugins
+    - stylelint-order
+    - [stylelint-declaration-block-no-ignored-properties](https://www.npmjs.com/package/stylelint-declaration-block-no-ignored-properties)
+    - stylelint-prettier
+
+### 3. ts规范
+#### [tslint](https://palantir.github.io/tslint/usage/cli/)
+- tslint-plugin-prettier
+```
+    "rulesDirectory": ["tslint-plugin-prettier"],
+    "rules": {
+        "prettier": true,
+    }
+```
+- tslint-config-prettier
+- tslint-eslint-rules
+- tslint:recommended
+```
+    "extends": ["tslint:recommended", "tslint-eslint-rules", "tslint-config-prettier"]
+```
+
+### 4. 项目实现
 #### 绑定git hook
 一般强制要求代码提交前，变动代码必须做格式校验，借助成熟的npm包实现
 
@@ -66,15 +159,18 @@ Linter 是检查代码风格/错误的小工具。其他类似的 Linter 工具�
 - pre-commit
 ```
     // package.json
-   "pre-commit": [
+    "scripts": {
+       "lint-staged": "lint-staged"
+    },
+    "pre-commit": [
        "lint-staged"
-   ],
-   "lint-staged": {
+    ],
+    "lint-staged": {
        "**/*.{js,jsx,tsx,ts,less,md,json}": [
          "prettier --write",
          "git add"
        ]
-   }
+    }
 ```
 
 #### 编译时检测
