@@ -1,0 +1,10 @@
+#### [生命周期](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+#### [派生状态](https://juejin.im/post/5b3595e3f265da59a76c9ed4)
+#### 表单设计
+- 受控组件（props）
+- 非受控组件
+    - setState回调
+    - ref
+#### 高性能的react
+- shouldComponentUpdate
+- PureComponent
